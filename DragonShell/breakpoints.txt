@@ -1,0 +1,27 @@
+Start of shell 
+    breakpoint set --file dragonshell.c --line #
+
+Cd Function 
+    breakpoint set --name cd
+
+python absolute path 
+    /opt/homebrew/bin/python3
+ls absolute path 
+    /bin/ls
+
+makefile 
+    /usr/bin/make
+
+redirect
+    /bin/echo "Hello There User" > test.txt
+
+    /bin/cat < breakpoints.txt > test.txt    
+
+piping 
+    /usr/bin/find ./ | /usr/bin/sort -r 
+    /usr/bin/find ./ | /usr/bin/sort 
+    
+execute sub process
+    /usr/bin/python3 test-files/subprocess.py
+    /usr/bin/make testrun -- `to compile and link` 
+    ./sub -- `to exececute` 

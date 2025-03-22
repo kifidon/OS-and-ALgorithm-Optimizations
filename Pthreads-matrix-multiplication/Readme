@@ -1,0 +1,68 @@
+# Matrix Multiplication with Pthreads
+
+This repository contains a C implementation of matrix multiplication using Pthreads to parallelize the computation across multiple threads. It also includes test generation and comparison functionality to verify the correctness of the matrix multiplication.
+
+## Overview
+
+- **matrix_mult.c**: The main implementation of matrix multiplication using Pthreads.
+- **test.c**: A test utility that generates test inputs, runs matrix multiplication, and compares the results.
+
+## Files
+
+### `matrix_mult.c`
+This file contains the main implementation of matrix multiplication using multiple threads. The multiplication is divided into blocks that are processed by different threads. The size of each block is computed based on the number of threads.
+
+**Key Functions:**
+- `matrixMultiplyThread`: A thread function that computes a block of the result matrix.
+- `createMatix`: Allocates memory for a matrix.
+- `main`: Initializes matrices, creates threads, and performs matrix multiplication.
+
+### `test.c`
+This file contains the testing utilities, which include functions to generate test input, run matrix multiplication, and compare results. It allows testing with different matrix sizes and thread counts.
+
+**Key Functions:**
+- `generateTestInput`: Generates random input matrices using an external program.
+- `runMatrixMultiplication`: Runs the matrix multiplication executable.
+- `compareMatrices`: Compares the computed matrix with the expected result matrix.
+- `loadMatricesFromFile`: Loads matrices from a file.
+- `matrixMultiply`: A serial implementation of matrix multiplication used for comparison.
+
+## Requirements
+
+- C Compiler (e.g., GCC)
+- POSIX threads library (`pthread`)
+- Timer library (`timer.h`) for performance measurement
+- I/O functions (`lab1_IO.h`) for loading and saving matrices
+
+## How to Build and Run
+
+### Step 1: Build the Program
+To compile the code, use the following command:
+
+```bash
+gcc -o main matrix_mult.c -lpthread
+gcc -o test test.c
+```
+=====
+# Initial Readme: UofA Faculty of ECE
+
+Read me for ECE420 Lab1 Script Kit
+Jan. 2023
+
+=====
+Overview:
+    There are two groups in this kit
+
+-----
+    Data generation program:
+    matrixgen.c      source file for the input data generation program
+
+-----
+    Important functions:
+    timer.h          macro definition for time measurement
+    lab1_IO.h        header for the lab1_IO.c, need to be included to call the IOs directly from lab1_IO.c
+    lab1_IO.c        source file for the IO functions, need to be referred in the compiler line if the functions are called in the program
+	
+=====
+Please also find the details instructions in the comments of the individual files.
+
